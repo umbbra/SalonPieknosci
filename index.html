@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://kit.fontawesome.com/a029292f1e.js"></script>
+    <title>Salon Piękności - Wenus</title>
+  </head>
+
+  <body>
+    <div id="sales" class="sales">
+      <div class="sales-content">
+        <div class="sales-header">
+          <h2>Chwytaj promocje!</h2>
+        </div>
+        <div class="sales-body">
+          <p>Tylko do końca tygodnia! -30% !!!</p>
+          <input id="generator" type="submit" value="Generuj kod rabatowy" />
+          <p>
+            <span id="discountCode">tutaj pojawi indywidualny twój kod</span>
+          </p>
+        </div>
+        <span class="close">Zamknij</span>
+      </div>
+    </div>
+
+    <div id="reservation" class="reservationPopUp">
+      <!-- Modal content -->
+      <div class="reservationPopUp-content">
+        
+        <form action="">
+          <p class="header-form">Proszę wpisz swoje dane:</p>
+
+          <p>
+            <label for="name">Rodzaj usługi:</label>
+            <select name="serviceToChoose" id="serviceToChoose" required>
+              <option value="">Wybierz...</option>
+            </select>
+          </p>
+          <p>
+            <label for="name">Imię:</label>
+            <input type="text" id="name" maxlength="15" required />
+          </p>
+          <p>
+            <label for="surname">Nazwisko:</label>
+            <input type="text" id="surname" required />
+          </p>
+          <p>
+            <label for="date">Data:</label>
+            <input type="date" id="formDate" pattern="^\d{2}.\d{2}\.\d{4}$" required placeholder="dd.mm.rrrr" min="2019-07-17" max="2019-09-01" > 
+          </p>
+          <p>
+            <label for="date">Numer telefonu:</label>
+            <input type="number" id="phone" min="111111111" max="999999999" required />
+          </p>
+          <p>
+            <label for="date">Kod rabatowy:</label>
+            <input type="text" id="codeDisc" />
+          </p>
+          <button id="formSubmit" type="submit">Wyślij</button>
+          <span id="information">
+            <p id="comunicat"></p>
+            <p>
+              Firma nie istnieje. Te informacje nie są w żaden sposób
+              przetwarzane ani nie znajdą się na serwerze. Zostaną tylko
+              wyświetlone powyżej.
+            </p>
+          </span>
+        <span class="closeRes">Zamknij</span>
+
+        </form>
+
+      </div>
+  
+    </div>
+
+    <div id="preloader">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <div class="container">
+      <div><i class="fas fa-ellipsis-v ham"></i></div>
+
+      <nav>
+        <div class="links">
+          <a href="#" id="services">usługi</a>
+          <a href="#" id="salesBtn">promocje</a>
+          <a href="#" id="contact">kontakt</a>
+          <a href="#" class="reservation" id="reservationBtn">umów wizytę</a>
+        </div>
+      </nav>
+
+      <header class="for-mobile">
+        <h1>Wenus ~ Jesteś piękna!</h1>
+      </header>
+      <header class="for-desktop">
+        <h1>Jesteś piękna!</h1>
+      </header>
+
+      <main>
+        <h2 class="slogan">Salon piękności WENUS - i jesteś piękna!</h2>
+        <p class="description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
+          voluptas non vero veritatis, velit libero laudantium rem et
+          voluptatibus beatae! Quia quisquam at molestiae voluptatum est atque
+          non repellat dolorum excepturi, ex distinctio minus officiis veniam
+          hic sed quid a doloribus amet eius quaerat quia error, aliquid autem,
+          facilis veniam minima eveniet qui provident accusantium! Libero vero
+          quas quidem reiciendis nesciunt incidunt, repellendus atque illum,
+          voluptatibus debitis, perferendis ad possimus?
+        </p>
+
+        <hr class="hr" />
+
+        <section class="services">
+          <div class="hand">
+            <h2 class="hand">Co możemy zrobić z twoimi dłońmi?</h2>
+
+            <div class="offer">
+              <div data-title="200 zł">
+                <div class="image img1 title corner"></div>
+                <p>Odżywienie paznokci</p>
+              </div>
+              <div>
+                <div class="image img2 title corner"></div>
+                <p>Hybrydy</p>
+              </div>
+              <div>
+                <div class="image img3 title corner"></div>
+                <p>Relaks dłoni</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hair">
+            <h2 class="hair">Co możemy zrobić z twoimi włosami?</h2>
+
+            <div class="offer">
+              <div>
+                <div class="image img4 title corner"></div>
+                <p>Strzyżenie</p>
+              </div>
+              <div>
+                <div class="image img5 title corner"></div>
+                <p>Odżywienie włosów</p>
+              </div>
+              <div>
+                <div class="image img6 title corner"></div>
+                <p>Farbowanie</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="makeup">
+            <h2 class="makeup">Zadbaj o kosmetykę twarzy!</h2>
+
+            <div class="offer">
+              <div>
+                <div class="image img7 title corner"></div>
+                <p>Makijaż weselny</p>
+              </div>
+              <div>
+                <div class="image img8 title corner"></div>
+                <p>Przedłużanie rzęs</p>
+              </div>
+              <div>
+                <div class="image img9 title corner"></div>
+                <p>Wyrównanie brwi</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <h2>Znajdź nas!</h2>
+
+        <div class="contact">
+          <p><i class="fas fa-phone-volume"></i> &nbsp 666-888-777</p>
+
+          <p><i class="fas fa-at"></i> &nbsp salonwenus@fikcyjny.dot</p>
+        </div>
+
+        <div class="socials">
+          <div>
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+          </div>
+        </div>
+
+        <div class="google-maps" id="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519124.3000222133!2d16.89229150641934!3d51.93245193003183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47009964a4640bbb%3A0x97573ca49cc55ea!2sPolska!5e0!3m2!1spl!2spl!4v1562755556126!5m2!1spl!2spl"
+            frameborder="0"
+            style="border:0"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <p class="copyright">
+          &copy Salon piękności - Wenus. Wszelkie prawa zastrzeżone
+        </p>
+      </footer>
+    </div>
+    <script async defer src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="js/code.js"></script>
+  </body>
+</html>

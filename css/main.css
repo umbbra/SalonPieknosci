@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css?family=Caveat|Marcellus|Roboto&display=swap&subset=latin-ext");
+
+/* 
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Caveat', cursive;
+    font-family: 'Marcellus', serif;
+
+==============
+=========      MOBILE FIRST
+===============
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+/* ===> OTHERS STYLE */
+html{
+  font-size: 62.5%;
+}
+hr {
+  margin: 5vh auto;
+  color: rgba(248, 159, 241, 0.5);
+  width: 70%;
+}
+
+div.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative; 
+  overflow: hidden
+}
+nav,
+header.for-desktop{
+  display: none;
+}
+
+@media (min-width: 1000px){
+  nav{
+    display: block;
+  }
+  div.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+

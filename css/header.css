@@ -1,0 +1,66 @@
+header.for-mobile {
+  height: 80vh;
+  background-image: url("../img/headerBgc.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  width: 100vw;
+}
+
+header.for-mobile h1 {
+  position: relative;
+  top: -10%;
+  left: 0;
+  transform: translateY(50%);
+  height: 100%;
+
+  font-size: 5rem;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 15px #555;
+  font-family: "Caveat", Georgia, cursive;
+}
+
+@media (min-width: 600px){
+  header.for-mobile h1 {
+    top: -10%;
+    font-size: 6.5rem;
+  }
+}
+
+@media (min-width: 870px) {
+  header.for-mobile {
+    height: 60vh;
+  }
+  header.for-mobile h1 {
+    top: -10%;
+    font-size: 7rem;
+  }
+}
+/* ===============> views for desktops */
+
+@media (min-width: 1000px){
+  header.for-mobile {
+    display: none;
+  }
+  
+  header.for-desktop{
+    display:block;
+    height: 40vh;
+    background-image: url("../img/headerBgc.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100vw;
+  }
+  
+  header h1 {
+    font-size: 5rem;
+    color: white;
+    text-align: center;
+    line-height: 40vh;
+    text-shadow: 0 0 15px #555;
+    font-family: "Caveat", Georgia, cursive;
+  }
+}
+

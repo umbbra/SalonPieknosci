@@ -1,0 +1,262 @@
+/* ===========> STYLES OF FOOTER  */
+footer {
+  background-color: rgb(146, 127, 150);
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  padding: 3vh 0;
+  font-family: "Marcellus", serif;
+  width: 100vw;
+
+}
+
+footer h2{
+  padding-top: 2vh;
+  height: 15%;
+  text-align: center;
+  font-family: "Caveat", Georgia, cursive;
+  font-size: 4rem;
+}
+
+footer div.socials{
+  display: flex;
+  justify-content: center;
+}
+
+div.socials div{
+  width: 80%;
+}
+
+footer div.socials, div.contact{
+ margin: 1vh 1vw 3vh ;
+ font-size: 2rem;
+}
+
+footer div.contact p{
+ transition:  .3s;
+}
+
+footer div.contact p:nth-of-type(1){
+  margin-bottom: 1vh;
+}
+
+footer div.contact p:hover{
+ color: pink;
+}
+
+footer div.socials i.fa-twitter:hover{
+  animation: fly 1s linear infinite;
+}
+
+@keyframes fly{
+  25%{
+    transform:rotate(-10deg);
+    transform:  translate(-5px, -1px);
+  }
+  50%{
+    transform:rotate(10deg);   
+  }
+  75%{
+    transform:rotate(5deg);
+    transform:  translate(5px, 1px);
+  }
+}
+
+footer div.socials i{
+  width: 20%;
+  cursor: pointer;
+  font-size: 5rem;
+  color:pink;
+ transition:  .3s;
+
+}
+
+footer div.socials i:hover{
+  font-size: 4.8rem;
+  color:white;
+}
+
+footer p.copyright{
+  font-size:  1.5rem;
+}
+/* =============> GOOGLE MAPS */
+
+
+footer div.google-maps{
+  width:100%;
+  height: 40vh;
+}
+
+footer div.google-maps iframe{
+  width: 100%;
+  height: 100%
+}
+
+footer p.copyright{
+  padding: 3vh;
+}
+
+@media(min-width: 600px){
+  footer h2{
+    font-size: 4rem;
+  }
+  
+  footer div.socials, div.contact{
+   font-size: 2rem;
+  }
+ 
+
+
+}
+@media (min-width: 870px) {
+  footer h2{
+    font-size: 5rem;
+  }
+
+  footer div.socials, div.contact{
+   font-size: 3rem;
+  }
+ 
+  footer div.socials i{
+    font-size: 7.5rem;
+  }
+  
+  footer div.socials i:hover{
+    font-size: 7rem;
+  }
+ 
+}
+
+/* ===============> views for desktops */
+
+@media (min-width: 1000px){
+  footer div.socials{
+    display: flex;
+    justify-content: center;
+  }
+  div.socials div{
+    width: 80%;
+  }
+  
+  footer div.socials, div.contact{
+   margin: 1vh 1vw 3vh ;
+   font-size: 2rem;
+  }
+  footer div.contact p{
+   transition:  .3s;
+  
+  }
+  footer div.contact p:nth-of-type(1){
+    margin-bottom: 1vh;
+  }
+  footer div.contact p:hover{
+   color: pink;
+  }
+  
+  
+  footer div.socials i{
+    width: 15%;
+    cursor: pointer;
+    font-size: 5rem;
+    color:pink;
+   transition:  .3s;
+  
+  }
+  
+  footer div.socials i:hover{
+    font-size: 4.5rem;
+    color:white;
+  }
+  
+  /* =============> GOOGLE MAPS */
+  
+  footer div.google-maps{
+    width:100%;
+    height: 40vh;
+  }
+  
+  footer p.copyright{
+    padding: 3vh;
+  }
+}
+
+@media(min-width: 1280px){
+  footer div.socials, div.contact{
+    margin: 1vh 1vw 3vh ;
+    font-size: 1.5rem;
+   }
+ 
+   footer div.socials i{
+     font-size: 4rem;
+     transition:  .3s;
+   }
+   
+   footer div.socials i:hover{
+     font-size: 4rem;
+   }
+   
+   footer p.copyright{
+     font-size: 1.5rem;
+     padding: auto;
+   }
+}
+
+@media(min-width: 1366px){
+  footer div.footer-container{
+    display: flex;
+   
+  }
+ 
+  footer div.socials, div.contact{
+   margin: 1vh 1vw 3vh ;
+   font-size: 2.5rem;
+  }
+
+  footer div.socials i{
+    width: 10%;
+    font-size: 4.5rem;
+    transition:  .3s;
+  }
+  
+  footer div.socials i:hover{
+    font-size: 4.5rem;
+  }
+  footer div.google-maps iframe{
+    width: 70%;
+    height: 100%
+  }
+  
+ 
+}
+
+@media(min-width: 1700px){
+  footer h2{
+    font-size: 5rem;
+  }
+  footer div.socials, div.contact{
+    margin: 1vh 1vw 3vh ;
+    font-size: 3rem;
+   }
+  footer div.google-maps iframe{
+    width: 60%;
+    height: 100%
+  }
+  
+}
+
+@media(min-width: 1900px){
+  footer h2{
+    font-size: 6rem;
+  }
+
+  footer div.socials, div.contact{
+    margin: 1vh 1vw 3vh ;
+    font-size: 3.5rem;
+   }
+ 
+  footer div.google-maps iframe{
+    width: 50%;
+    height: 100%
+  }
+  
+}
