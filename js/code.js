@@ -40,7 +40,7 @@ contact.addEventListener('click', (e) => scrollTo(sectionContact, e));
 
 const headerBgc = document.querySelectorAll('header');
 headerBgc.forEach(head =>{
-head.style.backgroundImage = `url("img/headerBGC.png")`;
+head.style.backgroundImage = `url("./img/headerBGC.png")`;
 })
 
 // ============> IMG TO SERVICES
