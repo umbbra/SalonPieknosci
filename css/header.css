@@ -1,6 +1,7 @@
 header.for-mobile {
   height: 80vh;
-  background-image: url("../img/headerBgc.png");
+  /* background-image: url("../img/headerBgc.png"); */
+  background-color: rgb(255, 175, 208);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -47,7 +48,8 @@ header.for-mobile h1 {
   header.for-desktop{
     display:block;
     height: 40vh;
-    background-image: url("../img/headerBgc.png");
+    /* background-image: url("../img/headerBgc.png"); */
+    background-color: rgb(255, 175, 208);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

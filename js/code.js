@@ -36,6 +36,13 @@ function scrollTo(element, e) {
 services.addEventListener('click', (e) => scrollTo(sectionServices, e));
 contact.addEventListener('click', (e) => scrollTo(sectionContact, e));
 
+// ============> IMG TO HEADER
+
+const headerBgc = document.querySelectorAll('header');
+headerBgc.forEach(head =>{
+head.style.backgroundImage = `url("img/headerBGC.png")`;
+})
+
 // ============> IMG TO SERVICES
 
 const tabOfImg = ['img/odzywienie.jpg', 'img/hybrydy.jpg', 'img/relaks.jpg', 'img/sciananie.jpg', 'img/odzywieniewlosow.jpg',
