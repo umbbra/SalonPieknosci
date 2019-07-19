@@ -1,9 +1,17 @@
-@import url("https://fonts.googleapis.com/css?family=Caveat|Marcellus|Roboto&display=swap&subset=latin-ext");
-
+@import url('https://fonts.googleapis.com/css?family=Caveat|Lato:300,400|Marcellus|Montserrat:300,400|Roboto:300,400&display=swap&subset=latin-ext');
 /* 
-    font-family: 'Roboto', sans-serif;
-    font-family: 'Caveat', cursive;
+    
+
+    font-family: 'Lato', sans-serif;
+
     font-family: 'Marcellus', serif;
+
+    font-family: 'Caveat', cursive;
+
+    font-family: 'Roboto', sans-serif;
+
+
+
 
 ==============
 =========      MOBILE FIRST
@@ -14,14 +22,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 /* ===> OTHERS STYLE */
 html{
   font-size: 62.5%;
 }
 hr {
-  margin: 5vh auto;
+  margin: 5vh auto 10vh;
   color: rgba(248, 159, 241, 0.5);
   width: 70%;
 }

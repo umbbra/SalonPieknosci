@@ -1,0 +1,13 @@
+OK LETS GO!
+- Stylowanie formularza - zrób ładniej!
+- powtarzający się kod js
+- obliczanie ceny z kodem rabatowym
+- dlaczego nie działa na edge?
+- zmień czcionki
+- kobitka (z deviantart)
+- menu mobilne zamykane po kliknięciu obok
+- wyciągnięcie "umów wizytę" z linków i dorzucenie do prawej
+- menu desktopowe wycentrować pionowo
+- popraw rozmiejscowienie nav (3 lininjki?)
+
+ TWOJE PUNKTY: 6/16

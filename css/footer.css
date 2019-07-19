@@ -76,7 +76,7 @@ footer div.socials i:hover{
   color:white;
 }
 
-footer p.copyright{
+footer div.copyright{
   font-size:  1.5rem;
 }
 /* =============> GOOGLE MAPS */
@@ -92,8 +92,10 @@ footer div.google-maps iframe{
   height: 100%
 }
 
-footer p.copyright{
+footer div.copyright{
+  width:100%;
   padding: 3vh;
+  
 }
 
 @media(min-width: 600px){
@@ -175,7 +177,7 @@ footer p.copyright{
     height: 40vh;
   }
   
-  footer p.copyright{
+  footer div.copyright{
     padding: 3vh;
   }
 }
@@ -195,7 +197,7 @@ footer p.copyright{
      font-size: 4rem;
    }
    
-   footer p.copyright{
+   footer div.copyright{
      font-size: 1.5rem;
      padding: auto;
    }

@@ -1,21 +1,3 @@
-// ============> PRELOADER 
-
-const preloaderEl = document.querySelector('#preloader');
-
-window.addEventListener('load', function () {
-  preloaderEl.classList.add('preloader-hiding');
-  preloaderEl.addEventListener('transitionend', function () {
-    this.classList.add('preloader-hidden');
-    this.classList.remove('preloader-hiding');
-  })
-});
-
-// ============> TODO :
-/*
-5. a potem informacje o przesłanych danych
-10. ostatnie poprawki i na githuba
-
-*/
 // ============>  SCROLL TO
 
 const services = document.querySelector('#services');
@@ -103,7 +85,7 @@ closeRes.addEventListener("click", () => {
   }
 });
 
-const tabOfServices = ['Odżywienie paznokci', 'Hybrydy', 'Relaks dłoni', 'Strzyżenie', 'Odżywienie włosów', 'Farbowanie', 'Makijaż weselny', 'Przedłużanie rzęs', 'Wyrównanie brwi'];
+const tabOfServices = ['Odżywienie paznokci', 'Hybrydy', 'Relaks dłoni', 'Strzyżenie', 'Odżywienie włosów', 'Farbowanie', 'Makijaż weselny', 'Przedłużanie rzęs', 'Wyrównywanie brwi'];
 
 const serviceToChoose = document.querySelector("#serviceToChoose");
 
@@ -206,7 +188,7 @@ const validateCode = () => {
   }
 }
 
-//====> RESeT ALL INPUTS
+//====> RESET ALL INPUTS
 const resetAll = () => {
   form.reset();
   message = "";
@@ -248,16 +230,20 @@ form.addEventListener("submit", function (e) {
 // ============> NAV FOR MOBILE
 
 const ham = document.querySelector('.ham');
-const nav = document.querySelector('nav');
+const nav = document.querySelector('#nav');
 const divLinks = document.querySelectorAll('div.links a');
+// const bgcNav = document.querySelector('.bgcNav');
 
 const addOrDelete = () => {
   nav.classList.toggle('active');
+  bgcNav.classList.toggle('active'); 
 }
 
 divLinks.forEach(el => {
   el.addEventListener('click', addOrDelete)
 });
+
+
 
 ham.addEventListener('click', addOrDelete);
 
@@ -279,3 +265,5 @@ const randomCode = () => {
 }
 
 generator.addEventListener('click', randomCode);
+
+
