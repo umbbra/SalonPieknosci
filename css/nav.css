@@ -19,7 +19,8 @@ nav {
   font-size: 2rem;
   background-color: rgba(255, 235, 249, 0.877);
   border-radius: 50%;
-  box-shadow: 0 0 15px 1px rgba(71, 71, 71, 0.349);
+  -webkit-box-shadow: 0 0 15px 1px rgba(71, 71, 71, 0.349);
+          box-shadow: 0 0 15px 1px rgba(71, 71, 71, 0.349);
   text-align: center;
   z-index: 10;
 }
@@ -29,12 +30,18 @@ nav.active {
 }
 
 nav div.links {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: relative;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%)
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%)
 }
 
 nav div.links a {
@@ -45,6 +52,7 @@ nav div.links a {
   letter-spacing: 2px;
   padding: 1vh;
   margin: 0 20px;
+  -webkit-transition: .2s;
   transition: .2s;
 }
 
@@ -61,11 +69,13 @@ nav button.reservation {
   border: 2px solid rgba(78, 15, 34, 0.514);
   background-color: rgb(177, 51, 89);
   font-size: 2.5rem;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   text-transform: uppercase;
   width: 80%;
   cursor: pointer;
   color: white;
+  -webkit-transition: 0.3s;
   transition: 0.3s;
  }
 
@@ -133,15 +143,21 @@ nav button.reservation {
     border-radius: 0;
     width: auto;
     height: auto;
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
     max-width: 80%;
     margin: 3vh auto;
     background-color: white;
   }
 
   nav div.links {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     text-transform: uppercase;
     left: 0;
   }
@@ -149,6 +165,7 @@ nav button.reservation {
   nav div.links a {
     color: rgb(80, 80, 80);
     letter-spacing: 0;
+    -webkit-transition: 0s;
     transition: 0s;
     font-size: 2rem;
   }
@@ -169,6 +186,7 @@ nav button.reservation {
     padding: 1vh 2vw;
     letter-spacing: 1px;
     margin-left: 5vw;
+    -webkit-transition: 0.3s;
     transition: 0.3s;
     color: rgb(121, 18, 49);
     text-decoration: none;
