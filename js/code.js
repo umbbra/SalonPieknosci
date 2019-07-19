@@ -127,7 +127,7 @@ const validateName = () => {
   } else if (nameValue.length > maxSize) {
     return errors.push('Imię jest za długie (max 15. znaków).');
   } else if (!reg.test(nameValue)) {
-    return errors.push('Co to za dziwne imię?');
+    return errors.push('Imię jest niepoprawne.');
   } else {
     mesName = `${nameValue}`;
     nameValid = true;
@@ -148,7 +148,7 @@ const validateSurname = () => {
   } else if (surnameValue.length > maxSize) {
     return errors.push('Nazwisko jest za długie (max. 15 znaków).');
   } else if (!regSur.test(surnameValue)) {
-    return errors.push('Co to za dziwne nazwisko?');
+    return errors.push('Nazwisko jest niepoprawne');
   } else {
     surnameValid = true;
     mesSurname = ` ${surnameValue}`;
@@ -180,7 +180,7 @@ const validateCode = () => {
   const sizeCode = 15;
 
   if (codeDisc.length !== sizeCode && codeDisc > 0) {
-    ifCode ='Kod jest błedny - nie masz zniżki';
+    ifCode =' Kod jest rabatowy jest niepoprawny.';
   } else if (codeDisc.length == sizeCode) {
     ifCode = ` Otrzymałeś zniżkę 30%`;
   } else {
@@ -216,6 +216,7 @@ form.addEventListener("submit", function (e) {
 
 
   if (nameValid && surnameValid && phoneValid) {
+    comunicat.style.display = "block";
     comunicat.textContent = message;
     resetAll();
   } else {
