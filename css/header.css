@@ -45,6 +45,7 @@ header.for-mobile h1 {
     display: none;
   }
   
+
   header.for-desktop{
     display:block;
     height: 40vh;

@@ -65,6 +65,31 @@ window.onclick = function (event) {
     sales.style.display = "none";
   }
 }
+// ============> CODE GENERATOR
+
+const generator = document.querySelector('#generator');
+const discountCode = document.querySelector("#discountCode");
+const chars = 'QWERTYUIOPASDFGHJKLZXCVBNM1234567890qwertyuiopasdfghjklzxcvbn';
+const charsNumber = 12;
+let code = "";
+
+const randomCode = () => {
+  generator.disabled = true;
+  for (let i = 0; i < charsNumber; i++) {
+    const index = Math.floor(Math.random() * 61);
+    code += chars[index];
+  }
+  discountCode.textContent = code;
+  generator.style.cursor = "default";
+  document.querySelector('#codeDisc').value = code;
+  
+}
+
+generator.addEventListener('click', randomCode);
+// DISABLE GENERATOR BUTTON
+generator.addEventListener('click', function () {    this.style.backgroundColor = "white";
+    this.style.color = "gray";
+})
 
 // ============> RESERVATION
 
@@ -100,14 +125,13 @@ for (let i = 0; i < tabOfServices.length; i++) {
 // ============> SHOW DATA FROM FORM
 const form = document.querySelector('form');
 const reg = /^[a-zA-ZąĄćĆęĘłŁńŃóÓśŚźżŻ]{3,}$/g;
+const regSur = /^[a-zA-ZąĄćĆęĘłŁńŃóÓśŚźżŻ]{3,}$/g;
 
 let errors = [];
-let nameValid = false;
-let surnameValid = false;
+let textValid = false;
 let phoneValid = false;
 
-let mesName;
-let mesSurname;
+let mesText;
 let mesPhone;
 let ifCode;
 
@@ -116,45 +140,37 @@ let ifCode;
 const minSize = 3;
 const maxSize = 15;
 
-const validateName = () => {
-
+const validateText = () =>{
   const nameValue = document.querySelector("#name").value;
+  const surnameValue = document.querySelector("#surname").value;
 
-  if (!nameValue.length) {
-    return errors.push('Nie wpisałeś żadnej wartości w pole Imię.');
-  } else if (nameValue.length < minSize) {
-    return errors.push('Imię jest za krótkie (min. 3 znaki).');
-  } else if (nameValue.length > maxSize) {
-    return errors.push('Imię jest za długie (max 15. znaków).');
-  } else if (!reg.test(nameValue)) {
-    return errors.push('Imię jest niepoprawne.');
-  } else {
-    mesName = `${nameValue}`;
-    nameValid = true;
-  }
-}
+  if (!nameValue.length || !surnameValue.length) {
+    console.log(nameValue);
 
-// ====> validate of surname
+        return errors.push('Nie wpisałeś żadnej wartości w pole Imię lub/i Nazwisko.');
+      } 
+      
+      else if (nameValue.length < minSize || surnameValue.length < minSize) {
+        return errors.push('Imię lub/i Nazwisko jest za krótkie (min. 3 znaki).');
+      } 
+      
+      else if (nameValue.length > maxSize  || surnameValue.length > maxSize) {
+        return errors.push('Imię lub/i Nazwisko jest za długie (max 15. znaków).');
+      } 
+      
+      else if (!reg.test(nameValue)) {
+        return errors.push('Imię zawiera niedopuszczalne znaki.');
+      } 
 
-const validateSurname = () => {
-
-  const surnameValue = document.querySelector('#surname').value;
-  const regSur = /^[a-zA-ZąĄćĆęĘłŁńŃóÓśŚźżŻ]{3,}$/g;
-
-  if (!surnameValue.length) {
-    return errors.push('Nie wpisałeś żadnej wartości w pole Nazwisko.)');
-  } else if (surnameValue.length < minSize) {
-    return errors.push('Nazwisko jest za krótkie (min. 3 znaki).');
-  } else if (surnameValue.length > maxSize) {
-    return errors.push('Nazwisko jest za długie (max. 15 znaków).');
-  } else if (!regSur.test(surnameValue)) {
-    return errors.push('Nazwisko jest niepoprawne');
-  } else {
-    surnameValid = true;
-    mesSurname = ` ${surnameValue}`;
-  }
-
-}
+      else if(!regSur.test(surnameValue)){
+        return errors.push('Nazwisko zawiera niedopuszczalne znaki.');
+      }
+   
+      else {
+        mesText = `${nameValue} ${surnameValue}`;
+        textValid = true;
+      }
+    }
 
 // ====> validate of phone number
 
@@ -162,26 +178,27 @@ const validatePhone = () => {
   const phoneValue = document.querySelector('#phone').value;
   let size = 9;
 
-  if (!phoneValue.length) {
+  if (phoneValue.length == 0) {
     return errors.push('Nie wpisałeś żadnej wartości w pole: Numer telefonu.)');
   } else if (phoneValue.length !== size) {
-    return errors.push('Numer jest za krótki lub za długi (9 znaków).');
+    return errors.push('Numer ma nieprawidłową ilość znaków (9 znaków).');
   } else {
     phoneValid = true;
     mesPhone = `, twój numer to: ${phoneValue}. `;
   }
 }
 
-// ====> validate of dscount code 
+// ====> validate of discount code 
 
 const validateCode = () => {
 
   const codeDisc = document.querySelector('#codeDisc').value;
-  const sizeCode = 15;
+  const sizeCode = 12;
 
-  if (codeDisc.length !== sizeCode && codeDisc > 0) {
-    ifCode =' Kod jest rabatowy jest niepoprawny.';
-  } else if (codeDisc.length == sizeCode) {
+
+  if (codeDisc.length !== sizeCode && codeDisc.length !== 0) {
+    ifCode =' Kod rabatowy nieprawidłowy.';
+  } else if (codeDisc.length === sizeCode) {
     ifCode = ` Otrzymałeś zniżkę 30%`;
   } else {
     ifCode = "";
@@ -197,11 +214,6 @@ const resetAll = () => {
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  validateName();
-  validateSurname();
-  validatePhone();
-  validateCode();
-
   //====> other values without validate 
   const selectValue = document.querySelector('#serviceToChoose').value;
   let mesSel = `Wybrano usługę: ${selectValue}`;
@@ -209,24 +221,32 @@ form.addEventListener("submit", function (e) {
   const dateValue = document.querySelector('#formDate').value;
   let mesDate = `, która odbędzie się:  ${dateValue}. Do zobaczenia!`;
 
+  validateText();
+  validatePhone();
+  validateCode();
+
    //====> to show values from form
   const comunicat = document.querySelector('#comunicat');
+  comunicat.textContent = "";
+
   let message = "";
-  message += mesName + mesSurname + mesPhone + mesSel + mesDate + ifCode;
+  message += mesText + mesPhone + mesSel + mesDate + ifCode;
 
-
-  if (nameValid && surnameValid && phoneValid) {
+//  console.log(errors);
+  if (textValid && phoneValid) {
     comunicat.style.display = "block";
     comunicat.textContent = message;
     resetAll();
   } else {
-    comunicat.textContent = `${errors.join("\n \n")}`;
+    comunicat.style.display = "block";
+    for(let i=0; i<errors.length; i++){
+      comunicat.textContent += `${errors[i]}  `;
+    }
     errors = [];
+
   }
 
 });
-
-
 
 // ============> NAV FOR MOBILE
 
@@ -247,23 +267,5 @@ reservation.addEventListener("click", addOrDelete);
 
 
 
-// ============> CODE GENERATOR
-
-const generator = document.querySelector('#generator');
-const discountCode = document.querySelector("#discountCode");
-const chars = 'QWERTYUIOPASDFGHJKLZXCVBNM1234567890qwertyuiopasdfghjklzxcvbn';
-const charsNumber = 12;
-
-const randomCode = () => {
-  generator.disabled = true;
-  let code = "";
-  for (let i = 0; i < charsNumber; i++) {
-    const index = Math.floor(Math.random() * 61);
-    code += chars[index];
-  }
-  discountCode.textContent = code;
-}
-
-generator.addEventListener('click', randomCode);
 
 
