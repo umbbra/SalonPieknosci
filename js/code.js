@@ -233,20 +233,19 @@ form.addEventListener("submit", function (e) {
 const ham = document.querySelector('.ham');
 const nav = document.querySelector('#nav');
 const divLinks = document.querySelectorAll('div.links a');
-// const bgcNav = document.querySelector('.bgcNav');
 
 const addOrDelete = () => {
   nav.classList.toggle('active');
-  bgcNav.classList.toggle('active'); 
 }
 
 divLinks.forEach(el => {
   el.addEventListener('click', addOrDelete)
 });
 
-
-
 ham.addEventListener('click', addOrDelete);
+reservation.addEventListener("click", addOrDelete);
+
+
 
 // ============> CODE GENERATOR
 

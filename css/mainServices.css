@@ -168,9 +168,7 @@ main div.image {
   main div.offer > div {
     width: 60%;
   }
-  section.services h2 {
-    font-size: 4.5rem;
-  }
+  
   main div.image {
     height: 35vh;
   }
@@ -194,7 +192,7 @@ main div.image {
   /* -------> MAIN SERVICES */
   section.services h2 {
     padding: 1vh;
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
   main div.offer {
     display: flex;
