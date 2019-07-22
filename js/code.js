@@ -58,11 +58,12 @@ const close = document.querySelector('span.close');
 
 
 btnSales.addEventListener("click", () => sales.style.display = "block");
-close.addEventListener("click", () => sales.style.display = "none");
+close.addEventListener("click", () => {sales.style.display = "none"; alert('Twój kod rabatowy został przeniesiony do zakładki "UMÓW WIZYTĘ"')});
 
 window.onclick = function (event) {
   if (event.target == sales) {
     sales.style.display = "none";
+    alert('Twój kod rabatowy został przeniesiony do zakładki "UMÓW WIZYTĘ"');
   }
 }
 // ============> CODE GENERATOR
