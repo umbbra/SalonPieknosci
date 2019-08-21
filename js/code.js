@@ -267,6 +267,24 @@ ham.addEventListener('click', addOrDelete);
 reservation.addEventListener("click", addOrDelete);
 
 
+//===> MAX AND MIN OF DATE
+const dateInput = document.querySelector("#formDate");
 
 
+
+(function setDate(){
+
+  function leadingZero(i) {
+    return (i < 10)? '0'+i : i;
+  }
+
+  const currentDate = new Date();
+  let minDate = currentDate.getFullYear() + "-" + leadingZero(currentDate.getMonth()+1) + "-" + leadingZero(currentDate.getDate());
+  
+  let maxDate = currentDate.getFullYear() + "-" + leadingZero(currentDate.getMonth()+2) + "-" + leadingZero(currentDate.getDate()-14);
+  
+  dateInput.setAttribute("min", minDate);
+  dateInput.setAttribute("max", maxDate);
+
+})();
 

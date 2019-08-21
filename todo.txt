@@ -1,8 +1,0 @@
-OK LETS GO!
-- powtarzający się kod js
-- obliczanie ceny z kodem rabatowym
-- dlaczego nie działa na edge?
-- kobitka (z deviantart)
-- menu mobilne zamykane po kliknięciu obok
-
- TWOJE PUNKTY: 11/16
